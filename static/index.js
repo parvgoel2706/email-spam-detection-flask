@@ -10,6 +10,7 @@ document.getElementById("prediction-form").addEventListener("submit", function (
         .then(response => response.text())
         .then(result => {
             // Display the result in the "result-container" div
+            console.log(result);
             document.getElementById("result-container").innerHTML = result;
         })
         .catch(error => console.error(error));
