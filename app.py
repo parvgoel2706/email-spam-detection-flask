@@ -4,9 +4,13 @@ import string
 import nltk
 from nltk.stem import PorterStemmer
 import sqlite3
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = '1c8073775dbc85a92ce20ebd44fd6a4fd832078f59ef16ec'
+app.secret_key = os.getenv('SECRET_KEY')
 
 ps = PorterStemmer()
 tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
