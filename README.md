@@ -1,92 +1,183 @@
-# Spam Mail Classification
+# 📧 Email Spam Detection System
 
-## Description
+## 👨‍💻 Developed By
 
-The **Spam Mail Classification** project is a web-based application that uses machine learning to classify emails as spam or ham. It features a Flask backend, a frontend created with HTML, CSS, and JavaScript, and a MySQL database for storing user data and email classifications.
+**Parv Goel**\
+B.Tech CSE -- Final Year
 
-### Features
+------------------------------------------------------------------------
 
-- **Email Classification**: Categorizes incoming emails as spam or ham.
-- **User Registration and Login**: Secure account creation and authentication.
-- **Real-Time Email Classification**: Classifies emails in real time.
-- **User Dashboard**: Users can view their email history and classifications.
-- **Machine Learning Model**: Employs a trained model to classify emails.
-- **Customization**: Users can configure spam filter settings.
+## 📌 Project Overview
 
-## Technologies Used
+The **Email Spam Detection System** is a full-stack web application
+developed to classify emails as **Spam** or **Ham (Not Spam)** using
+Machine Learning techniques.
 
-- **Flask** (Python Web Framework): For the backend server.
-- **HTML, CSS, and JavaScript** (Frontend): For the user interface.
-- **MySQL** (Database): For storing user data and email classifications.
-- **Machine Learning Libraries** (e.g., Scikit-Learn): Used to build and deploy the email classification model.
+This system integrates:
 
-## Getting Started
+-   A **Flask-based backend**
+-   A responsive **HTML/CSS/JavaScript frontend**
+-   A **MySQL database** for storing user data and email history
+-   A trained **Machine Learning model** built using Scikit-Learn
 
-To use the Spam Mail Classification app, follow these steps:
+The project demonstrates practical implementation of Natural Language
+Processing (NLP) and supervised learning for real-world spam filtering.
 
-1. **Clone this Repository**: Get the project source code by cloning this repository to your local machine.
+------------------------------------------------------------------------
 
-2. **Set Up the Flask Backend and MySQL Database**:
-   - Refer to the documentation or instructions provided in the code for setting up the Flask backend and MySQL database.
+## 🎯 Objectives
 
-3. **Install Required Python Packages**:
-   - You'll need to install a few Python packages using pip. Open your terminal and run:
+-   Detect spam emails using Machine Learning\
+-   Build a complete web-based application (Frontend + Backend)\
+-   Implement user authentication and dashboard functionality\
+-   Store classified emails in a database\
+-   Deploy and showcase a real-world ML application
 
-   ```bash
-   pip install Flask
-   pip install nltk
-   pip install mysql-connector-python
-   ```
+------------------------------------------------------------------------
 
-5. **Create a MySQL Database and Table**:
-   - Set up the MySQL database and table by running the following SQL commands in your MySQL server:
+## 🚀 Features
 
-   ```sql
-   CREATE DATABASE smc;
-   ```
+-   ✅ User Registration & Login System\
+-   ✅ Real-time Email Classification\
+-   ✅ Spam / Ham Prediction\
+-   ✅ User Dashboard with Email History\
+-   ✅ Machine Learning Model Integration\
+-   ✅ Database Storage using MySQL
 
-    ```sql
-   USE smc;
-   ```
+------------------------------------------------------------------------
 
-   ```sql
-   CREATE TABLE users (
-       id INT AUTO_INCREMENT PRIMARY KEY,
-       full_name VARCHAR(255) NOT NULL,
-       username VARCHAR(255) UNIQUE NOT NULL,
-       email VARCHAR(255) UNIQUE NOT NULL,
-       phone VARCHAR(15) NOT NULL,
-       password VARCHAR(255) NOT NULL
-   );
-   ```
+## 🛠️ Technologies Used
 
-6. **Run the Flask App**:
-   - Start the Flask app by running the following command in your terminal:
+### 🔹 Backend
 
-   ```bash
-   python app.py
-   ```
+-   Python\
+-   Flask
 
-   - Goto browser to open this website in Localhost:
+### 🔹 Frontend
 
-   ```bash
-   http://127.0.0.1:5000/
-   ```
+-   HTML\
+-   CSS\
+-   JavaScript
 
-## Author
+### 🔹 Database
 
-- **Niladri Chatterjee**
+-   MySQL
 
-### Contributors
+### 🔹 Machine Learning
 
-- Niladri Chatterjee - If others have contributed to this project, consider adding their names here.
+-   Scikit-Learn\
+-   Natural Language Processing (NLP)\
+-   CountVectorizer / TF-IDF\
+-   Multinomial Naive Bayes
 
-## License
+------------------------------------------------------------------------
 
-You can specify the license under which you want to distribute your project. If it's open source, you can use a popular license like MIT or Apache 2.0.
+## ⚙️ System Architecture
 
-## Acknowledgments
+1.  User enters email text in the web interface.\
+2.  The backend preprocesses the text.\
+3.  Text is converted into numerical features using vectorization.\
+4.  The trained ML model predicts Spam or Ham.\
+5.  Result is displayed instantly.\
+6.  Email data is stored in MySQL database.
 
-Mention any libraries, tools, or resources that you used or were inspired by in your project here.
+------------------------------------------------------------------------
 
-Feel free to adapt this template to your project's specific needs.
+## 📦 Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+``` bash
+git clone https://github.com/YOUR_USERNAME/email-spam-detection.git
+cd email-spam-detection
+```
+
+### 2️⃣ Create Virtual Environment
+
+``` bash
+python -m venv venv
+venv\Scripts\activate   # Windows
+```
+
+### 3️⃣ Install Required Packages
+
+``` bash
+pip install -r requirements.txt
+```
+
+Or manually:
+
+``` bash
+pip install flask nltk mysql-connector-python scikit-learn pandas numpy
+```
+
+### 4️⃣ Setup MySQL Database
+
+``` sql
+CREATE DATABASE smc;
+USE smc;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+```
+
+### 5️⃣ Run the Application
+
+``` bash
+python app.py
+```
+
+Open in browser:
+
+    http://127.0.0.1:5000/
+
+------------------------------------------------------------------------
+
+## 📊 Machine Learning Model
+
+The spam detection model is built using:
+
+-   Text preprocessing (cleaning, tokenization)\
+-   Feature extraction using vectorization\
+-   Multinomial Naive Bayes classifier\
+-   Model serialization using Pickle
+
+The model is trained on labeled spam datasets and achieves good accuracy
+for binary classification.
+
+------------------------------------------------------------------------
+
+## 🌍 Deployment
+
+The application can be deployed using:
+
+-   Render\
+-   Railway\
+-   PythonAnywhere
+
+Deployment-ready with minor configuration changes.
+
+------------------------------------------------------------------------
+
+## 📚 Learning Outcomes
+
+Through this project, I gained practical knowledge of:
+
+-   Flask Web Development\
+-   Database Integration with Python\
+-   Machine Learning model training & deployment\
+-   Text preprocessing & NLP\
+-   End-to-end ML web application development
+
+------------------------------------------------------------------------
+
+## 📜 License
+
+This project is developed for academic purposes (Minor Project -- B.Tech
+CSE).

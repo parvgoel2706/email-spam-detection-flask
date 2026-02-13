@@ -3,11 +3,10 @@ import pickle
 import string
 import nltk
 from nltk.stem import PorterStemmer
-import mysql.connector
-
+import sqlite3
 
 app = Flask(__name__)
-app.secret_key = '1c8073775dbc85a92ce20ebd44fd6a4fd832078f59ef16ec'  # Replace with a secure secret key
+app.secret_key = '1c8073775dbc85a92ce20ebd44fd6a4fd832078f59ef16ec'
 
 ps = PorterStemmer()
 tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
@@ -39,13 +38,26 @@ def transform_text(text):
 
     return " ".join(y)
 
-# Define your database connection
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="2001",
-    database="smc"
+
+# =========================
+# SQLITE DATABASE CONNECTION
+# =========================
+db = sqlite3.connect('database.db', check_same_thread=False)
+cur = db.cursor()
+
+cur.execute('''
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    full_name TEXT,
+    username TEXT,
+    email TEXT UNIQUE,
+    phone TEXT,
+    password TEXT
 )
+''')
+
+db.commit()
+
 
 @app.route('/')
 def home():
@@ -57,7 +69,6 @@ def about():
 
 @app.route('/index')
 def index():
-    # Check if the 'user' session variable exists (i.e., the user is logged in)
     if 'user' in session:
         return render_template('index.html')
     else:
@@ -99,12 +110,11 @@ def register():
         if password != confirm_password:
             return "Password and Confirm Password do not match."
 
-        # Insert data into MySQL
-        cur = db.cursor()
-        cur.execute("INSERT INTO users (full_name, username, email, phone, password) VALUES (%s, %s, %s, %s, %s)",
-                    (full_name, username, email, phone, password))
+        cur.execute(
+            "INSERT INTO users (full_name, username, email, phone, password) VALUES (?, ?, ?, ?, ?)",
+            (full_name, username, email, phone, password)
+        )
         db.commit()
-        cur.close()
 
         flash('Registration successful', 'success')
         return redirect('/signin')
@@ -116,13 +126,13 @@ def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        remember_me = request.form.get('remember_me')  # Get the 'remember_me' checkbox value
+        remember_me = request.form.get('remember_me')
 
-        # Query the database to check if the email and password match
-        cur = db.cursor()
-        cur.execute("SELECT * FROM users WHERE email = %s AND password = %s", (email, password))
+        cur.execute(
+            "SELECT * FROM users WHERE email = ? AND password = ?",
+            (email, password)
+        )
         user = cur.fetchone()
-        cur.close()
 
         if user:
             session['user'] = user
@@ -137,7 +147,6 @@ def login():
 
 @app.route('/logout')
 def logout():
-    # Clear the user session to log out
     session.pop('user', None)
     return redirect(url_for('home'))  # Redirect to the sign-in page after logging out
 
