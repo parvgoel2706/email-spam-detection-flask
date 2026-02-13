@@ -1,15 +1,18 @@
 <!-- result.html -->
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title> Finexo </title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
-</head>
-<body>
-    <!-- <h1>Email Spam Classifier Result</h1> -->
-    <h3><b>Prediction:</b> {{ prediction }}</p></h3>
-    <!-- <a href="/index">Go back</a>
-    <a href="/signin">Log out</a> -->
-</body>
+<!-- This page is parsed by fetch() in index.html to extract the prediction value.
+     The data-prediction attribute on <body> is the primary signal. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>SpamShield — Result</title>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/favicon.png') }}"
+    />
+  </head>
+  <!-- data-prediction is read by the JS fetch handler in index.html -->
+  <body data-prediction="{{ prediction }}">
+    <!-- Fallback text in case JS fails and user lands here directly -->
+    <p>{{ prediction }}</p>
+  </body>
 </html>
