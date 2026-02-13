@@ -17,6 +17,7 @@ tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 
 nltk.download('punkt')
+nltk.download('punkt_tab')
 
 def transform_text(text):
     text = text.lower()
