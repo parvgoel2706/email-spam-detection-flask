@@ -2,7 +2,7 @@
 
 ## 👨‍💻 Developed By
 
-**Parv Goel**\
+**Parv Goel**
 B.Tech CSE -- Final Year
 
 ------------------------------------------------------------------------
@@ -27,21 +27,21 @@ Processing (NLP) and supervised learning for real-world spam filtering.
 
 ## 🎯 Objectives
 
--   Detect spam emails using Machine Learning\
--   Build a complete web-based application (Frontend + Backend)\
--   Implement user authentication and dashboard functionality\
--   Store classified emails in a database\
+-   Detect spam emails using Machine Learning
+-   Build a complete web-based application (Frontend + Backend)
+-   Implement user authentication and dashboard functionality
+-   Store classified emails in a database
 -   Deploy and showcase a real-world ML application
 
 ------------------------------------------------------------------------
 
 ## 🚀 Features
 
--   ✅ User Registration & Login System\
--   ✅ Real-time Email Classification\
--   ✅ Spam / Ham Prediction\
--   ✅ User Dashboard with Email History\
--   ✅ Machine Learning Model Integration\
+-   ✅ User Registration & Login System
+-   ✅ Real-time Email Classification
+-   ✅ Spam / Ham Prediction
+-   ✅ User Dashboard with Email History
+-   ✅ Machine Learning Model Integration
 -   ✅ Database Storage using MySQL
 
 ------------------------------------------------------------------------
@@ -50,35 +50,35 @@ Processing (NLP) and supervised learning for real-world spam filtering.
 
 ### 🔹 Backend
 
--   Python\
+-   Python
 -   Flask
 
 ### 🔹 Frontend
 
--   HTML\
--   CSS\
+-   HTML
+-   CSS
 -   JavaScript
 
 ### 🔹 Database
 
--   MySQL
+-   SQLite
 
 ### 🔹 Machine Learning
 
--   Scikit-Learn\
--   Natural Language Processing (NLP)\
--   CountVectorizer / TF-IDF\
+-   Scikit-Learn
+-   Natural Language Processing (NLP)
+-   CountVectorizer / TF-IDF
 -   Multinomial Naive Bayes
 
 ------------------------------------------------------------------------
 
 ## ⚙️ System Architecture
 
-1.  User enters email text in the web interface.\
-2.  The backend preprocesses the text.\
-3.  Text is converted into numerical features using vectorization.\
-4.  The trained ML model predicts Spam or Ham.\
-5.  Result is displayed instantly.\
+1.  User enters email text in the web interface.
+2.  The backend preprocesses the text.
+3.  Text is converted into numerical features using vectorization.
+4.  The trained ML model predicts Spam or Ham.
+5.  Result is displayed instantly.
 6.  Email data is stored in MySQL database.
 
 ------------------------------------------------------------------------
@@ -96,7 +96,7 @@ cd email-spam-detection
 
 ``` bash
 python -m venv venv
-venv\Scripts\activate   # Windows
+source venv\Scripts\activate   # Windows
 ```
 
 ### 3️⃣ Install Required Packages
@@ -143,9 +143,9 @@ Open in browser:
 
 The spam detection model is built using:
 
--   Text preprocessing (cleaning, tokenization)\
--   Feature extraction using vectorization\
--   Multinomial Naive Bayes classifier\
+-   Text preprocessing (cleaning, tokenization)
+-   Feature extraction using vectorization
+-   Multinomial Naive Bayes classifier
 -   Model serialization using Pickle
 
 The model is trained on labeled spam datasets and achieves good accuracy
@@ -155,11 +155,9 @@ for binary classification.
 
 ## 🌍 Deployment
 
-The application can be deployed using:
+The application is deployed using:
 
--   Render\
--   Railway\
--   PythonAnywhere
+-   Render
 
 Deployment-ready with minor configuration changes.
 
@@ -169,10 +167,10 @@ Deployment-ready with minor configuration changes.
 
 Through this project, I gained practical knowledge of:
 
--   Flask Web Development\
--   Database Integration with Python\
--   Machine Learning model training & deployment\
--   Text preprocessing & NLP\
+-   Flask Web Development
+-   Database Integration with Python
+-   Machine Learning model training & deployment
+-   Text preprocessing & NLP
 -   End-to-end ML web application development
 
 ------------------------------------------------------------------------
