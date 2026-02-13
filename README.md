@@ -88,7 +88,7 @@ Processing (NLP) and supervised learning for real-world spam filtering.
 ### 1️⃣ Clone the Repository
 
 ``` bash
-git clone https://github.com/YOUR_USERNAME/email-spam-detection.git
+git clone https://github.com/parvgoel2706/email-spam-detection.git
 cd email-spam-detection
 ```
 
